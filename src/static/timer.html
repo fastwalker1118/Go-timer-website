@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="timer-container">
+        <div class="timer-section black-turn">
+            <div class="timer-half white" id="white-timer">
+                <div class="timer-display white-timer">10:00</div>
+            </div>
+            <div class="timer-half black" id="black-timer">
+                <div class="timer-display black-timer">10:00</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Utility Menu -->
+    <div class="utility-menu">
+        <div class="utility-content">
+            <h3>Game Controls</h3>
+            <button class="btn btn-secondary utility-btn">Pause</button>
+            <button class="btn btn-danger utility-btn">Restart</button>
+            <button class="btn btn-secondary utility-btn">Settings (back)</button>
+            <button class="btn btn-secondary utility-btn">Move History</button>
+            <button class="btn btn-secondary utility-btn">Save Game</button>
+            <button class="btn btn-primary utility-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Move History Modal -->
+    <div class="history-modal">
+        <div class="history-content">
+            <div class="history-header">
+                <h3>Move History</h3>
+                <button class="close-btn">×</button>
+            </div>
+            <div class="history-text">No moves yet</div>
+            <div class="history-chart"></div>
+        </div>
+    </div>
+
+    <!-- Timeout Overlay -->
+    <div class="timeout-overlay">
+        <div class="timeout-content">
+            <h1>TIME OUT!</h1>
+            <p>A player has run out of time.</p>
+            <button class="btn btn-primary timeout-btn">Restart</button>
+            <button class="btn btn-secondary timeout-btn">Settings</button>
+        </div>
+    </div>
+
+    <a href="https://manus.space" class="footer-link">Made with Manus</a>
+    <script src="timer.js"></script>
+</body>
+</html>
+
