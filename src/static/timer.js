@@ -210,6 +210,14 @@ document.addEventListener('DOMContentLoaded', () => {
         gameState.moves.push(move);
         console.log('Move recorded:', move);
 
+        // Reset byo-yomi time after move (this is the key fix)
+        const gameSettings = JSON.parse(sessionStorage.getItem('gameSettings') || '{}');
+        if (gameState.currentPlayer === 'white' && gameState.whiteInByoyomi) {
+            gameState.whiteByoyomiTime = gameSettings.byoYomiTime || 30;
+        } else if (gameState.currentPlayer === 'black' && gameState.blackInByoyomi) {
+            gameState.blackByoyomiTime = gameSettings.byoYomiTime || 30;
+        }
+
         // Always save to local storage for persistence
         saveToLocalStorage();
 
@@ -302,6 +310,28 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update black timer
         const blackDisplayTime = gameState.blackInByoyomi ? gameState.blackByoyomiTime : gameState.blackTime;
         blackTimer.textContent = formatTime(blackDisplayTime);
+
+        // Update byo-yomi periods display
+        const whitePeriodsDisplay = document.getElementById('white-periods');
+        const blackPeriodsDisplay = document.getElementById('black-periods');
+        
+        if (whitePeriodsDisplay) {
+            if (gameState.whiteInByoyomi) {
+                whitePeriodsDisplay.textContent = `Periods: ${gameState.whiteByoyomiPeriods}`;
+                whitePeriodsDisplay.style.display = 'block';
+            } else {
+                whitePeriodsDisplay.style.display = 'none';
+            }
+        }
+        
+        if (blackPeriodsDisplay) {
+            if (gameState.blackInByoyomi) {
+                blackPeriodsDisplay.textContent = `Periods: ${gameState.blackByoyomiPeriods}`;
+                blackPeriodsDisplay.style.display = 'block';
+            } else {
+                blackPeriodsDisplay.style.display = 'none';
+            }
+        }
 
         // Update active state
         whiteTimer.classList.toggle('active', gameState.currentPlayer === 'white');

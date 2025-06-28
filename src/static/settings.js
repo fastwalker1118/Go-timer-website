@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const byoYomiPeriods = parseInt(byoYomiPeriodsInput.value);
 
         // Validate inputs
-        if (mainTime < 1 || mainTime > 180) {
-            showNotification('Main time must be between 1 and 180 minutes', 'error');
+        if (mainTime < 0 || mainTime > 180) {
+            showNotification('Main time must be between 0 and 180 minutes', 'error');
             return;
         }
         if (byoYomiTime < 5 || byoYomiTime > 300) {
