@@ -4,13 +4,9 @@ A professional web-based timer application designed specifically for the ancient
 
 ## Features
 
-- **Professional Timer Interface**: Clean, split-screen design with distinct white and black player sides
 - **Byoyomi Support**: Configurable overtime periods for authentic Go timing
-- **User Authentication**: Login system with guest mode support
-- **Game History**: Track and review past games with detailed statistics
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Quick Presets**: Pre-configured timing settings for different game types
 - **Move History Tracking**: Record and visualize game progression
+- **Game History**: Track and review past games with detailed time statistics
 - **Save Game Functionality**: Export game records for analysis
 
 ## Technology Stack
