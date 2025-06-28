@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Go Timer
 
 A professional web-based timer application designed specifically for the ancient game of Go (Weiqi/Baduk). This application provides precise timing functionality with byoyomi (overtime) periods, user authentication, game history tracking, and a clean, modern interface.
@@ -321,3 +322,9 @@ For issues, questions, or feature requests, please refer to the project reposito
 
 *Made with Manus - Professional AI-powered development*
 
+=======
+# Go-timer-website
+A website that times Go games with option to save time used per move locally, allowing players to reflect deeper on their time usage distribution and thought process in game review.
+
+website available https://go-timer-website.onrender.com/
+>>>>>>> cf794470241971d69fc83b909cd1a6a85c4e031d
